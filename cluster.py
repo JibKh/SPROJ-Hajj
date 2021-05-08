@@ -469,8 +469,8 @@ def main():
     read_speed() # normalize_meters, coordinate_p1, p1_pixels, p2_pixels, z, midline_eq
     read_points() # Read points. points variable is list of the lines in a frame
     
-    if not check_lengths_frames_text():
-        print("Lengths of frames, flowframes and coordinate text file does not match")
+#     if not check_lengths_frames_text():
+#         print("Lengths of frames, flowframes and coordinate text file does not match")
     
     for i, flow in enumerate(sorted(os.listdir("/content/flownet2pytorch/output/inference/run.epoch-0-flow-field/"))):
         frame_name = "/content/frames/" + flow[0:-4] + ".png"
