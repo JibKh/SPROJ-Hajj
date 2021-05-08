@@ -8,7 +8,7 @@ global p1, p2, z
 global coordinate_p1
 global midline_eq, edge_1_eq, edge_2_eq # Tuples of gradient, y-intercept
 
-f=open('./text_files/text_speed.txt','w')
+f=open('text_speed.txt','w')
 
 buckets = []
 dots_midline = []
