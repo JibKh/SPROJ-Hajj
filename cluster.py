@@ -17,10 +17,10 @@ def check_lengths_frames_text():
 
     len_cords_lines = len(text_cords)
 
-    flowframes_dir = os.listdir("./flowframes")
+    flowframes_dir = os.listdir("/content/flownet2pytorch/output/inference/run.epoch-0-flow-field")
     len_flowframes = len(flowframes_dir)
 
-    frame_dir = os.listdir("./frames")
+    frame_dir = os.listdir("/content/frames")
     len_frames = len(frame_dir)
 
     print(len_cords_lines, len_flowframes, len_frames)
@@ -451,7 +451,7 @@ def make_flow(flo):
     return flow
 
 def read_flow(flow):
-    return open("./flowframes/"+flow, "r") 
+    return open("/content/flownet2pytorch/output/inference/run.epoch-0-flow-field/"+flow, "r") 
 
 def average(values, length):
     # print("Values:", values)
@@ -476,8 +476,8 @@ def main():
     if not check_lengths_frames_text():
         print("Lengths of frames, flowframes and coordinate text file does not match")
     
-    for i, flow in enumerate(sorted(os.listdir("./flowframes"))):
-        frame_name = "./frames/" + flow[0:-4] + ".png"
+    for i, flow in enumerate(sorted(os.listdir("/content/flownet2pytorch/output/inference/run.epoch-0-flow-field/"))):
+        frame_name = "/content/frames/" + flow[0:-4] + ".png"
         
         # Checks if a line is empty. If it is then Copy that frame image and continue
         if not find_points_line(i): # Get the line points. The variable "points_line" now contains a list of only that frames points.
