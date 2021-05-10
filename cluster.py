@@ -486,8 +486,8 @@ def main():
 
         points_labels, velocity_labels, speed_labels, average_speed, total_average_speed = cluster_2()
         output_arrows(i, frame_name, points_labels, velocity_labels, speed_labels, average_speed, total_average_speed)
-        # clustered_points, clustered_velocity = cluster() # Cluster and output average speed
-        # output_arrows(i, clustered_points, clustered_velocity)
+        clustered_points, clustered_velocity = cluster() # Cluster and output average speed
+        output_arrows(i, clustered_points, clustered_velocity)
 
 
     cv2.waitKey(0)
