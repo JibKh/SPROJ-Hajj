@@ -6,6 +6,7 @@ import math
 from sklearn.cluster import KMeans
 from sklearn.preprocessing import StandardScaler
 
+total_total = 0
 
 def check_lengths_frames_text():
     text_cords = open("./text_files/cords.txt", 'r')
